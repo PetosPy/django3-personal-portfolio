@@ -1,0 +1,88 @@
+{% extends "portfolio/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="hero-image">
+    <img src="{% static 'portfolio/petos_ss.png' %}" width="250px"  class="pro-img">
+    <div class="hero-text">
+      <h1 style="font-size:50px">I am Michael Haraeb</h1>
+      <h3>And I'm a Python Programmer! <i class="fab fa-python"></i></h3>
+    </div>
+</div>
+
+<!-- About me -->
+<h2 class="mt-5" style="text-align:center">About me</h2>
+  <hr>
+<br>
+<br>  
+<div class="about_me" >
+    <p><h5>I am a Python developer/ programmer </h5></p>
+    <p><h6>My main focus is on the Backend, with the creation of <b>APIs</b> and consumption of thrird party APIs.
+      <br>
+      I also specialise in webscraping with <b>Selenium</b> and <b>Beautiful</b> soup and Web-Application testing and automation with <b>Selenium webdriver</b> and Python.
+      <br>
+      I am mostly self-taught with almost three years of experience with the Python programming language, 
+      with which I used have developed various applications together with its Frameworks like <b>Flask</b> and <b>Django</b>. 
+      This Portfolio and Blog was made with Django and is one of my first Django projects with many more to come.
+    </h6></p>
+</div>
+
+
+<!-- Technologies -->
+<h2 class="mt-5" style="text-align:center">Technologies</h2>
+  <hr>
+<br>
+<br>
+
+<div class="row">
+    {% for project in projects %}
+    
+    <div class="col-lg-4 col-md-6" style="text-align:center">
+      {% if project.url %}
+      <a href="{{ project.url }}" target="blank">
+        <img src="{{ project.image.url }}" class="img-fluid mb-2" width='100px' >
+      </a>
+      {% else %}
+      <img  src="{{ project.image.url }}" class="img-fluid mb-2" width='100px' >
+
+      {% endif %}
+      <h6>{{ project.title }}</h6>
+      <br>
+  
+    </div>
+    {% endfor %}
+</div>
+
+<br>
+<h2 class="mt-5" style="text-align:center">Tools</h2>
+  <hr>
+<br>
+<br>
+
+<div class="row">
+    {% for tool in tools %}
+    
+    <div class="col-lg-4 col-md-6" style="text-align:center">
+      {% if tool.url %}
+      <a href="{{ tool.url }}" target="blank">
+        <img src="{{ tool.image.url }}" class="img-fluid mb-2" width='100px' >
+      </a>
+      {% else %}
+      <img  src="{{ tool.image.url }}" class="img-fluid mb-2" width='100px' >
+
+      {% endif %}
+      <h6>{{ tool.title }}</h6>
+      <br>
+  
+    </div>
+    {% endfor %}
+</div>
+<hr>
+
+{% endblock %}
+
+
+
+

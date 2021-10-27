@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    {% load static %}
+
+		<meta charset="utf-8">
+		<title>🎓 Michael Haraeb</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+		<link rel="icon" href="{% static 'portfolio/favicon.ico' %}">
+
+		<!-- Font awesome -->
+		<script src="https://kit.fontawesome.com/e8fb4d12c3.js" crossorigin="anonymous"></script>
+    
+
+		<!-- CSS stylesheet -->
+		<link rel="stylesheet" href="{% static 'portfolio/styles.css' %}">
+
+		<!-- Google fonts -->
+	  <link rel="preconnect" href="https://fonts.googleapis.com">
+	  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+		<!-- Bootstrap 5 & 3.4-->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+	</head>
+    
+	<body>
+ <!-- NavBar -->
+		<nav id="topNav" class="navbar navbar-expand-md navbar-light">
+      <div class="container">
+        <a class="navbar-brand" href="{% url 'home' %}">
+          <img src="{% static 'portfolio/logo_2.png' %}" width="30" height="30" class="d-inline-block align-top" alt="Michael Haraeb's logo">
+
+          <b><span>Michael Haraeb</span></b>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse text-center" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="{% static 'portfolio/Python_ENG_2021.pdf' %}" target="blank">Resume</a>
+            </li>
+            <li class="nav-item">
+              
+              <a class="nav-link" href="{% static 'portfolio/Python_port_2021.pdf' %}" target="blank" >Currículo</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.linkedin.com/in/michael-haraeb-3a500184/" target="_blank">LinkedIn</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://twitter.com/petos29/" target="_blank">Twitter</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://github.com/PetosPy" target="_blank">GitHub</a>
+            </li>
+            <li>
+              <a href="{% url 'blog:all_blogs' %}" class="btn btn-outline-info">Blog</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <br>
+    <br>
+
+
+    <div class="container">
+      {% block content %}{% endblock %}
+    </div>
+    <br>
+    <br>
+
+<!-- Footer Section -->
+    <footer class="bg-light text-center text-white">
+      <!-- Grid container -->
+      <div class="container p-4 pb-0">
+        <!-- Section: Social media -->
+        <section class="mb-4">
+
+          <!-- Twitter -->
+          <a
+            class="btn btn-floating m-1"
+            style="background-color: #55acee;"
+            href="https://twitter.com/petos29/"
+            role="button" target="blank"
+            ><i class="fab fa-twitter fa-lg"></i
+          ></a>
+    
+          <!-- Instagram -->
+          <a
+            class="btn btn-floating m-1"
+            style="background-color: #FF0075;"
+            href="https://www.instagram.com/petos_na/"
+            role="button" target="blank"
+            ><i class="fab fa-instagram"></i
+          ></a>
+    
+          <!-- Linkedin -->
+          <a
+            class="btn btn-floating m-1"
+            style="background-color: #5a64f5;"
+            href="https://www.linkedin.com/in/michael-haraeb-3a500184/"
+            role="button" target="blank"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+          <!-- Github -->
+          <a
+            class="btn btn-floating m-1"
+            style="background-color: #9D9D9D;"
+            href="https://github.com/PetosPy"
+            role="button" target="blank"
+            ><i class="fab fa-github"></i
+          ></a>
+        </section>
+        <!-- Section: Social media -->
+      </div>
+      <!-- Grid container -->
+    
+      <!-- Copyright --> 
+      <div class="text-center p-3 text-black" style="background-color: #B5EAEA;">
+        © {{ year }} Copyright:
+        <a class="text-black" href="{% url 'home' %}">🎓Michael</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
+
+  </body>
+</html>
+
+
+
+
+
