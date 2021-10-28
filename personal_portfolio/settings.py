@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-%wpl0m)p!&tc+e^t@yu7m_*3v&2r#7ig$1!udmw7#bmkmv4=!j
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['petospy21.pythonanywhere.com']
+ALLOWED_HOSTS = ['petospy21.pythonanywhere.com', '127.0.0.1']
 
 
 # Application definition
@@ -129,3 +129,13 @@ MEDIA_ROOT = os.path.join(BASE_DIR / 'media',)
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+try:
+    from .local_settings import *
+
+except ImportError:
+    print("looks like no local file, you must be on production")
+
+else:
+    print('local settings found')
+
