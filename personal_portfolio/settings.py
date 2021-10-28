@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-%wpl0m)p!&tc+e^t@yu7m_*3v&2r#7ig$1!udmw7#bmkmv4=!j
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://petospy21.pythonanywhere.com/']
 
 
 # Application definition
